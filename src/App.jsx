@@ -36,18 +36,21 @@ export default function AkhilaHospital() {
   };
 
   return (
-    <div style={{ fontFamily: "sans-serif", background: "#f8faff", color: "#1a2340", overflowX: "hidden", width: "100%" }}>
+    <div style={{ fontFamily: "sans-serif", background: "#f8faff", color: "#1a2340", overflowX: "hidden", width: "100vw", maxWidth: "100%", position: "relative" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html, body { width: 100%; overflow-x: hidden; }
+        html { overflow-x: hidden; width: 100%; }
+        body { overflow-x: hidden; width: 100%; min-width: 0; }
+        #root, #__next { width: 100%; overflow-x: hidden; }
 
         .akh-nav {
           position: fixed; top: 0; left: 0; right: 0; z-index: 999;
           height: 68px; display: flex; align-items: center; padding: 0 24px;
           background: rgba(255,255,255,0.97); backdrop-filter: blur(10px);
           transition: box-shadow 0.3s; border-bottom: 1px solid #e8edf8;
+          width: 100vw;
         }
         .akh-nav.scrolled { box-shadow: 0 2px 20px rgba(26,92,184,0.13); }
         .akh-nav-inner {
@@ -91,6 +94,7 @@ export default function AkhilaHospital() {
 
         .akh-mobile-menu {
           position: fixed; top: 68px; left: 0; right: 0; z-index: 998;
+          width: 100vw;
           background: #fff; border-top: 1px solid #e8edf8;
           padding: 16px 24px 24px; box-shadow: 0 8px 24px rgba(0,0,0,0.08);
         }
@@ -112,6 +116,7 @@ export default function AkhilaHospital() {
         .akh-hero {
           padding-top: 68px;
           background: linear-gradient(145deg, #e8f0fc 0%, #f8faff 55%, #daeaf9 100%);
+          width: 100%;
         }
         .akh-hero-inner {
           width: 100%; max-width: 1180px; margin: 0 auto;
@@ -165,7 +170,7 @@ export default function AkhilaHospital() {
         }
 
         /* STATS */
-        .akh-stats { background: linear-gradient(135deg,#1a5cb8,#0e3d7a); padding: 44px 24px; }
+        .akh-stats { background: linear-gradient(135deg,#1a5cb8,#0e3d7a); padding: 44px 24px; width: 100%; }
         .akh-stats-inner { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); }
         .akh-stat { text-align: center; padding: 10px 16px; border-right: 1px solid rgba(255,255,255,0.2); }
         .akh-stat:last-child { border-right: none; }
@@ -173,7 +178,7 @@ export default function AkhilaHospital() {
         .akh-stat-lbl { color: rgba(255,255,255,0.75); font-size: 0.82rem; margin-top: 6px; font-family: 'Inter', sans-serif; }
 
         /* ABOUT */
-        .akh-about { padding: 88px 24px; background: #fff; }
+        .akh-about { padding: 88px 24px; background: #fff; width: 100%; }
         .akh-about-inner { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
         .akh-about-visual { background: linear-gradient(145deg,#eaf0fb,#d4e5f7); border-radius: 20px; padding: 30px; }
         .akh-about-card-top {
@@ -194,7 +199,7 @@ export default function AkhilaHospital() {
         .akh-section-p { color: #4a5a80; line-height: 1.85; font-size: 0.97rem; margin-bottom: 14px; font-weight: 300; font-family: 'Inter', sans-serif; }
 
         /* SERVICES */
-        .akh-services { padding: 88px 24px; background: #f0f5fd; }
+        .akh-services { padding: 88px 24px; background: #f0f5fd; width: 100%; }
         .akh-services-inner { max-width: 1180px; margin: 0 auto; }
         .akh-section-head { text-align: center; margin-bottom: 50px; }
         .akh-section-head .akh-section-p { max-width: 500px; margin: 0 auto; }
@@ -209,7 +214,7 @@ export default function AkhilaHospital() {
         .akh-service-desc { color: #4a5a80; font-size: 0.88rem; line-height: 1.7; font-weight: 300; font-family: 'Inter', sans-serif; }
 
         /* CONTACT */
-        .akh-contact { padding: 88px 24px; background: #fff; }
+        .akh-contact { padding: 88px 24px; background: #fff; width: 100%; }
         .akh-contact-inner { max-width: 1180px; margin: 0 auto; }
         .akh-contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; margin-top: 50px; align-items: start; }
         .akh-info-item { display: flex; gap: 14px; margin-bottom: 26px; }
@@ -239,7 +244,7 @@ export default function AkhilaHospital() {
         .akh-success { text-align: center; padding: 52px 32px; background: #eaf0fb; border-radius: 14px; }
 
         /* FOOTER */
-        .akh-footer { background: #0a2a5e; color: rgba(255,255,255,0.82); padding: 52px 24px 28px; }
+        .akh-footer { background: #0a2a5e; color: rgba(255,255,255,0.82); padding: 52px 24px 28px; width: 100%; }
         .akh-footer-inner { max-width: 1180px; margin: 0 auto; }
         .akh-footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
         .akh-footer-title { font-weight: 700; color: #fff; font-size: 0.8rem; letter-spacing: 0.09em; text-transform: uppercase; margin-bottom: 14px; font-family: 'Inter', sans-serif; }
